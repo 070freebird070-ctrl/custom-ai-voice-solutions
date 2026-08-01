@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Custom AI Voice Solutions — Your phone, answered. Every time.</title>
+<meta name="description" content="Managed missed-call rescue and AI receptionists for local trades businesses. When you can't answer, we make sure the job doesn't walk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf6f0; --ink:#1e2733; --ink-soft:#4b5563; --flame:#e8590c;
+  --flame-deep:#c2410c; --line:#e4dcd0; --card:#fffdf9;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Public Sans',sans-serif;color:var(--ink);background:var(--paper);
+  line-height:1.6;
+  background-image:radial-gradient(rgba(30,39,51,.04) 1px, transparent 1px);
+  background-size:22px 22px;
+}
+.wrap{max-width:960px;margin:0 auto;padding:0 1.4rem}
+h1,h2,h3{font-family:'Fraunces',serif;line-height:1.12}
+
+/* header */
+header{padding:1.4rem 0;border-bottom:3px solid var(--ink)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem}
+.mark{font-family:'Fraunces',serif;font-weight:900;font-size:1.15rem;letter-spacing:.02em}
+.mark span{color:var(--flame)}
+header a.call{font-weight:700;color:var(--flame-deep);text-decoration:none;border-bottom:2px solid var(--flame);padding-bottom:1px}
+
+/* hero */
+.hero{padding:4.5rem 0 3.5rem;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:900;max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--flame);display:inline-block;transform:rotate(-1.2deg)}
+.hero p.lede{font-size:1.15rem;color:var(--ink-soft);max-width:52ch;margin:1.4rem 0 2rem}
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);font-weight:700;
+  padding:.85rem 1.5rem;border-radius:6px;text-decoration:none;border:2px solid var(--ink);
+  transition:transform .15s ease, background .15s ease}
+.btn:hover{transform:translate(-2px,-2px);background:var(--flame-deep);border-color:var(--flame-deep)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.hero .stamp{
+  position:absolute;right:-1.5rem;top:2.2rem;font-family:'Fraunces',serif;font-weight:700;
+  border:2.5px solid var(--flame);color:var(--flame);border-radius:10px;
+  padding:.5rem 1rem;transform:rotate(7deg);font-size:.95rem;background:var(--card);
+  box-shadow:4px 4px 0 rgba(232,89,12,.18)}
+@media(max-width:700px){.hero .stamp{position:static;display:inline-block;margin-top:1.4rem;transform:rotate(-2deg)}}
+
+/* the leak */
+.leak{border-top:3px solid var(--ink);background:var(--ink);color:var(--paper);padding:3.4rem 0}
+.leak h2{font-size:clamp(1.7rem,4vw,2.5rem);max-width:22ch}
+.leak h2 span{color:#ffb17a}
+.leak p{color:#c8cdd5;max-width:58ch;margin-top:1rem}
+
+/* steps */
+.steps{padding:3.6rem 0}
+.steps h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:1.5rem;
+  box-shadow:0 1px 0 var(--line)}
+.card .num{font-family:'Fraunces',serif;font-weight:900;font-size:2.2rem;color:var(--flame)}
+.card h3{margin:.4rem 0 .5rem;font-size:1.15rem}
+.card p{color:var(--ink-soft);font-size:.97rem}
+
+/* guardrails */
+.rails{padding:0 0 3.6rem}
+.rails .inner{background:var(--card);border:2px solid var(--ink);border-radius:12px;padding:2rem;
+  box-shadow:6px 6px 0 rgba(30,39,51,.12)}
+.rails h2{font-size:clamp(1.5rem,3.5vw,2rem);margin-bottom:1.2rem}
+.rails ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.7rem 1.6rem}
+.rails li{padding-left:1.5rem;position:relative;color:var(--ink-soft);font-size:.98rem}
+.rails li::before{content:"✓";position:absolute;left:0;color:var(--flame);font-weight:700}
+.rails p.note{margin-top:1.3rem;font-size:.9rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:1rem}
+
+/* about + contact */
+.about{padding:0 0 4rem}
+.about .inner{display:grid;grid-template-columns:1.2fr .8fr;gap:2.5rem;align-items:start}
+@media(max-width:700px){.about .inner{grid-template-columns:1fr}}
+.about h2{font-size:clamp(1.5rem,3.5vw,2rem);margin-bottom:1rem}
+.about p{color:var(--ink-soft);margin-bottom:.9rem}
+.contact-card{background:var(--ink);color:var(--paper);border-radius:12px;padding:1.8rem}
+.contact-card h3{font-size:1.25rem;margin-bottom:.8rem}
+.contact-card a{color:#ffb17a;font-weight:700;text-decoration:none}
+.contact-card p{font-size:.95rem;color:#c8cdd5;margin-bottom:.7rem}
+
+footer{border-top:3px solid var(--ink);padding:1.6rem 0 2.4rem;font-size:.85rem;color:var(--ink-soft)}
+footer .wrap{display:flex;flex-direction:column;gap:.4rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="mark">CUSTOM <span>AI VOICE</span> SOLUTIONS</div>
+    <a class="call" href="tel:+12147176777">Hear it live: (214) 717-6777</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="stamp">Founding-customer<br>pilot — now open</div>
+    <h1>Your phone, answered. <em>Every time.</em></h1>
+    <p class="lede">You're under a house, up a ladder, or elbow-deep in a water heater —
+    and the phone rings. We build and run AI assistants that answer when you can't,
+    take the caller's information, and text you what matters. You stay the boss;
+    the machine just catches what you'd otherwise lose.</p>
+    <div class="cta-row">
+      <a class="btn" href="tel:+12147176777">📞 Call the live demo</a>
+      <a class="btn ghost" href="#contact">Ask about the pilot</a>
+    </div>
+  </div>
+</section>
+
+<section class="leak">
+  <div class="wrap">
+    <h2>A missed call isn't a missed call. <span>It's a missed job.</span></h2>
+    <p>When a customer with a burst pipe reaches voicemail, most don't leave a message —
+    they hang up and dial the next name on the list. That's hundreds of dollars walking,
+    a few times a week. Voicemail stores messages. We rescue the job.</p>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="num">1</div>
+        <h3>The call comes to us first</h3>
+        <p>Your business number rings your cell like always. Only when you can't pick up
+        does the assistant step in — a natural voice that answers, asks what's going on,
+        where, and how urgent.</p>
+      </div>
+      <div class="card">
+        <div class="num">2</div>
+        <h3>You get the story in seconds</h3>
+        <p>The caller's name, number, problem, and the full recording land on your phone
+        moments after the call ends. Read it or listen to it between jobs.</p>
+      </div>
+      <div class="card">
+        <div class="num">3</div>
+        <h3>Nothing books without your thumb</h3>
+        <p>The assistant collects the request; <strong>you</strong> approve it. One tap.
+        No AI ever promises your time or quotes prices you didn't set.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rails">
+  <div class="wrap">
+    <div class="inner">
+      <h2>Built to stay in bounds</h2>
+      <ul>
+        <li>Every call is answered with a clear notice: it's an AI assistant, and the call is recorded</li>
+        <li>Inbound only — we never make cold calls or send marketing blasts</li>
+        <li>Text messages go only to people who called you first and asked for them; STOP always works</li>
+        <li>Your prices come from your sheet — the assistant can't invent a quote</li>
+        <li>No voice is ever cloned without its owner's verified, written consent</li>
+        <li>One switch turns the whole thing off, any time</li>
+      </ul>
+      <p class="note"><strong>Privacy, plainly:</strong> calls are carried by commercial phone
+      and AI voice platforms and are recorded and transcribed so you can review them. We keep
+      the working data on our own systems, use it only to run your service, and delete it on
+      request. We are an independent service and are not affiliated with or endorsed by any
+      AI platform vendor.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="contact">
+  <div class="wrap">
+    <div class="inner">
+      <div>
+        <h2>Who's behind this</h2>
+        <p>Custom AI Voice Solutions is a founder-run service based in Dallas, Texas.
+        One person sets up your assistant, tests it on your real line, and answers
+        the phone when you need a change — no ticket queue, no offshore support desk.</p>
+        <p>We started with local trades — plumbers, HVAC, handymen — because that's
+        where a missed call costs the most. If you run a different kind of business
+        and want your phone handled, ask. Custom builds are what we do.</p>
+      </div>
+      <div class="contact-card">
+        <h3>Talk to us</h3>
+        <p>Call the demo line and experience it exactly like your customers would:</p>
+        <p><a href="tel:+12147176777">(214) 717-6777</a></p>
+        <p>Or write: <a href="mailto:guygemini070@gmail.com">guygemini070@gmail.com</a></p>
+        <p>Pilot spots are limited — founding customers get hands-on setup, free.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Custom AI Voice Solutions · Dallas, Texas</div>
+    <div>AI assistants are disclosed as AI on every call. Calls are recorded and transcribed for your review.</div>
+  </div>
+</footer>
+
+</body>
+</html>
